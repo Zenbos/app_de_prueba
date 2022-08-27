@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(
+
     MaterialApp(
       debugShowCheckedModeBanner: false,
+
       home: Scaffold(
 
         backgroundColor: Colors.blueGrey[700],
@@ -26,7 +28,10 @@ void main() {
 
 
               );
+
+
             },
+
           ),
 
           // Este codigo es de un boton de entrada y de retornar
@@ -48,8 +53,7 @@ void main() {
           //            ),
           //          );
           //        },
-          //      ));
-          //    },
+
           //  ),
 
           title: const Text(
@@ -57,24 +61,40 @@ void main() {
             maxLines: 1,
           ),
 
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.account_circle),
-              tooltip:'Account',
-             color: Colors.black,
-             onPressed: (){
-                // ScaffoldMessenger.of(context).showSnackBar(
-                //     const SnackBar(content: Text('T')));
-              },
-            ),
-          ],
+
+
+
+            // IconButton(
+            //             icon: const Icon(Icons.account_circle),
+            //             tooltip:'Account',
+            //            color: Colors.black,
+            // onPressed: () {
+            // Navigator.push(context, MaterialPageRoute<void>(
+            // builder: (BuildContext context) {
+            // return Scaffold(
+            // appBar: AppBar(
+            // title: const Text('Next page'),
+            // ),
+            // body: const Center(
+            // child: Text(
+            // 'This is the next page',
+            // style: TextStyle(fontSize: 24),
+            // ),
+            // ),
+            // );
+            // },
+            // ),
+            // );
+            // }
+            // ),
+
 
         ),
 
-        body: 
+        body:
         const Center(
           child: Image(
-              image: AssetImage('Images/high.png'),
+              image: AssetImage('../Images/aaa.jpg'),
           //     image: NetworkImage('https://th.bing.com/th/id/R.35671f238b8a4a253df095a46853fa30?rik=ZSsg%2f4YZzq0F7A&pid=ImgRaw&r=0') ,
           ),
 
@@ -90,3 +110,9 @@ void main() {
     ),
   );
 }
+  // @override
+  // Widget build(BuildContext context) {
+  // return const Scaffold(
+  //
+  // );
+  // }
