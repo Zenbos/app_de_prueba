@@ -39,7 +39,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: ListView(
           children: <Widget>[
             Container(
-              child: Image(image: AssetImage('https://web.whatsapp.com/8746e876-0681-4c87-8d7d-4c43cdd4ce1b')),
+              child: Image(image: AssetImage('../Images/bank.jpg')),
             ),
             Container(
 
