@@ -38,9 +38,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         padding: const EdgeInsets.all(10),
         child: ListView(
           children: <Widget>[
-            Container(
-        child: const Image(image: AssetImage('../Images/aaa.jpg')),
-            ),
+
+         const Image(image: NetworkImage('https://k31.kn3.net/taringa/4/3/A/3/B/E/andresmc28/97E.jpg')),
+
             Container(
 
                 alignment: Alignment.center,
@@ -83,10 +83,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ),
             ),
             TextButton(
+              child: const Text('Forgot Password',),
               onPressed: () {
                 //forgot password screen
               },
-              child: const Text('Forgot Password',),
+
             ),
             Container(
                 height: 50,
@@ -100,11 +101,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 )
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Text('Does not have account?'),
                 TextButton(
-                  child: const Text(
-                    'Sign in',
+                  child: const Text('Sign up',
                     style: TextStyle(fontSize: 20),
                   ),
                   onPressed: () {
@@ -112,7 +113,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   },
                 )
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
         ));
