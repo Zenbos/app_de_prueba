@@ -2,11 +2,11 @@
 class Assets {
   Assets._();
 
-  static const String Images = 'Images/';
-  static const String ImagesAaa = 'Images/aaa.jpg';
-  static const String ImagesBank = 'Images/bank.jpg';
-  static const String ImagesHigh = 'Images/high.png';
-  static const String ImagesLol = 'Images/lol.jpg';
-  static const String ImagesTurbosimExpressLogo = 'Images/TurbosimExpress_Logo.jpeg';
+  static const String images = 'Images/';
+  static const String imagesAaa = 'Images/aaa.jpg';
+  static const String imagesBank = 'Images/bank.jpg';
+  static const String imagesHigh = 'Images/high.png';
+  static const String imagesLol = 'Images/lol.jpg';
+  static const String imagesturbosimexpresslogo = 'Images/TurbosimExpress_Logo.jpeg';
 
 }

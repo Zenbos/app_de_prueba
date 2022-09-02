@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: _title,
       home: Scaffold(
+
         appBar: AppBar(title: const Text(_title)),
         body: const MyStatefulWidget(),
       ),
