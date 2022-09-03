@@ -13,10 +13,15 @@ class Body extends StatelessWidget {
       children: <Widget>[
         Container(
           //it will cover 20% of our total height
-          height: size.height * 0.2,
+          height: size.height * 0.245,
           child: Stack(
             children: <Widget> [
               Container(
+                padding: EdgeInsets.only(
+                    left: kDefaultPadding,
+                    right: kDefaultPadding,
+                    bottom: 36 + kDefaultPadding
+                ),
                height: size.height * 0.2 -27,
                 decoration: const BoxDecoration(color: kPrimaryColor2,
                 borderRadius: BorderRadius.only(
@@ -27,7 +32,16 @@ class Body extends StatelessWidget {
                   ),
                 ),
                 child: Row(
-                  children: <Widget>[Text('Hi World')],
+                  children: <Widget>[
+                    Text(
+                      'Turbo Sim',
+                      style: Theme.of(context).textTheme.headline4?.copyWith(
+                          color: Colors.white, fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Spacer(),
+                    Image.asset("Images/TurbosimExpress_Logo(2).jpg")
+                  ],
                 ),
               ),
               Positioned(
@@ -65,7 +79,7 @@ class Body extends StatelessWidget {
                             ),
                           ),
                       ),
-                      SvgPicture.asset("assets/icons/search.png")
+                      SvgPicture.asset("assets/icons/search.svg")
                     ],
                   ),
                   ),
