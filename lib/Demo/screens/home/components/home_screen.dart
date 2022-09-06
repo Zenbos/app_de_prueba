@@ -20,10 +20,14 @@ class HomeScreen extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       backgroundColor: kPrimaryColor2,
-      elevation: 0,
-      leading: IconButton(
+      elevation: 3,
+      leading: Row(
+        children: <Widget>[IconButton(
           icon: SvgPicture.asset("assets/icons/menu-burger.svg"),
           onPressed: () {},
+         ),
+          Image.asset("Images/TurbosimExpress_Logo(2).jpg")
+        ],
       ),
     );
   }

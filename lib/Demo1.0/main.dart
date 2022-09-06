@@ -1,8 +1,8 @@
-import 'package:app_de_prueba/Demo/screens/home/components/home_screen.dart';
+import 'package:app_de_prueba/Demo1.0/constantes.dart';
+import 'package:app_de_prueba/Demo1.0/screens/home/home.dart';
 import 'package:flutter/material.dart';
 
-import 'constans.dart';
-
+enum Menu { itemOne, itemTwo, itemThree, itemFour }
 
 void main() {
   runApp(const MyApp());
@@ -17,15 +17,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Prue-2',
+      title: 'Prue-3',
       theme: ThemeData(
-        scaffoldBackgroundColor: kBackgroundColor,
-        primaryColor: kPrimaryColor,
+        // backgroundColor: kPrimaryColor2,
+
+
         textTheme:Theme.of(context).textTheme.apply(bodyColor: kTextcolor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
 
-      home: const HomeScreen(),
+      home: const MyStatefulWidget(),
+
     );
   }
 }

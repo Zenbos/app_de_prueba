@@ -11,13 +11,13 @@ class Body extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Column(
       children: <Widget>[
-        Container(
+    Container(
           //it will cover 20% of our total height
           height: size.height * 0.245,
           child: Stack(
             children: <Widget> [
               Container(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                     left: kDefaultPadding,
                     right: kDefaultPadding,
                     bottom: 36 + kDefaultPadding
@@ -33,61 +33,58 @@ class Body extends StatelessWidget {
                 ),
                 child: Row(
                   children: <Widget>[
-                    Text(
-                      'Turbo Sim',
-                      style: Theme.of(context).textTheme.headline4?.copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold,
+                  Positioned(
+                      bottom: 70,
+                      left: 0,
+                      right: 0,
+                   child: Container(
+                    alignment: Alignment.center,
+                    margin: const EdgeInsets.symmetric( horizontal: kDefaultPadding) ,
+                    padding: const EdgeInsets.symmetric( horizontal: kDefaultPadding) ,
+                    height: 54,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                      boxShadow: [
+                        BoxShadow(
+                        offset: const Offset(0,10),
+                          blurRadius: 50,
+                          color: kPrimaryColor2.withOpacity(0.23)
                       ),
+                      ],
                     ),
-                    Spacer(),
-                    Image.asset("Images/TurbosimExpress_Logo(2).jpg")
-                  ],
-                ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                right: 0,
-                child: Container(
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.symmetric( horizontal: kDefaultPadding) ,
-                  padding: const EdgeInsets.symmetric( horizontal: kDefaultPadding) ,
-                  height: 54,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                      offset: const Offset(0,10),
-                        blurRadius: 50,
-                        color: kPrimaryColor2.withOpacity(0.23)
-                    ),
-                    ],
-                  ),
-                  child: Row(
-                    children: <Widget> [
-                      Expanded(
-                        child: TextField(
-                          // onChanged:  (){},
-                          decoration: InputDecoration(
-                            hintText: "Search",
-                            hintStyle: TextStyle(
-                                color: kPrimaryColor3.withOpacity(0.5)
-                            ),
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            ),
+                      child: Row(
+                        children: <Widget> [
+                          Expanded(
+                            child: TextField(
+                              // onChanged:  (){},
+                              decoration: InputDecoration(
+                                hintText: "Search",
+                                hintStyle: TextStyle(
+                                    color: kPrimaryColor3.withOpacity(0.5)
+                                ),
+                                enabledBorder: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                ),
+                              ),
                           ),
+                          SvgPicture.asset("assets/icons/search.svg")
+                        ],
                       ),
-                      SvgPicture.asset("assets/icons/search.svg")
-                    ],
-                  ),
-                  ),
+                   ),
                 ),
-            ],
+                ],
           ),
         ),
       ],
+          ),
+
+    ),
+
+      ],
+
+
     );
+
   }
 }
