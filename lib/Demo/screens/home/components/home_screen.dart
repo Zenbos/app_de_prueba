@@ -14,9 +14,12 @@ class HomeScreen extends StatelessWidget {
       appBar: buildAppBar(),
 
       body: const Body(),
+
     );
   }
 
+
+}
   AppBar buildAppBar() {
     return AppBar(
       backgroundColor: kPrimaryColor2,
@@ -31,4 +34,3 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}

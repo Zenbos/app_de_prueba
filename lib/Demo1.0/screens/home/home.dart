@@ -1,10 +1,13 @@
-
 import 'package:app_de_prueba/Demo1.0/constantes.dart';
+import 'package:app_de_prueba/Demo1.0/screens/home/BNavigation/Bottom_Nav.dart';
+import 'package:app_de_prueba/Demo1.0/screens/home/BNavigation/Routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
 
 enum Menu { itemOne, itemTwo, itemThree, itemFour }
-enum Menu1 {Account, home, Shop, UnlockService}
+enum Menu1 {account, home, shop, unlockservice}
 
 // class HomeScreen extends StatelessWidget {
 //   const HomeScreen ({super.key});
@@ -53,29 +56,42 @@ enum Menu1 {Account, home, Shop, UnlockService}
 //     );
 //   }
 // }
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  static const String _title = 'Flutter Code Sample';
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: _title,
-      home: MyStatefulWidget(),
-    );
-  }
-}
+// class MyApp extends StatelessWidget {
+//   const MyApp({super.key});
+//
+//   static const String _title = 'Flutter Code Sample';
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return const MaterialApp(
+//       title: _title,
+//       home: MyStatefulWidget(),
+//     );
+//   }
+// }
 
 class MyStatefulWidget extends StatefulWidget {
-  const MyStatefulWidget({super.key});
+  const MyStatefulWidget({Key? key}): super(key: key);
 
   @override
   State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  String _selectedMenu = '';
+  // String _selectedMenu = '';
+int index = 0;
+BNavigator ?myBNB;
+
+@override
+  void initState() {
+    myBNB = BNavigator(currentIndex: (i){
+      setState(() {
+        index = i;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,27 +104,43 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           onSelected: (Menu1 item) {
 
             setState(() {
-              _selectedMenu = item.name;
+              // _selectedMenu = item.name;
+
             });
           },
-          // Icono del Navbar en el leading
-          child: const Icon(CupertinoIcons.line_horizontal_3),
+          // Icon del Navbar en el leading
+          child: Image.asset('assets/icons/icons8-menu-50.png', color: Colors.black,scale: 1.99,),
           itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu1>> [
             const PopupMenuItem<Menu1>(
-              value: Menu1.Account,
-              child: Text('Account'),
+
+              value: Menu1.account,
+
+              textStyle: TextStyle(fontSize: 20,
+                fontStyle: FontStyle.normal,
+                color: Colors.black,
+              fontWeight: FontWeight.w300,
+              ),
+              child: Text('Profile',),
             ),
             const PopupMenuItem<Menu1>(
               value: Menu1.home,
               child: Text('Home'),
             ),
             const PopupMenuItem<Menu1>(
-              value: Menu1.Shop,
-              child: Text('Shop'),
+              value: Menu1.shop,
+              textStyle: TextStyle(
+                  color: Colors.black
+              ),
+              child: Icon(
+                Icons.account_circle_outlined,
+                semanticLabel: 'ahhhhhhasdas',
+                color: Colors.black,
+                textDirection: TextDirection.ltr,
+              ),
             ),
             const PopupMenuItem<Menu1>(
-              value: Menu1.UnlockService,
-              child: Text('Unlock Service'),
+              value: Menu1.unlockservice,
+              child: Text('home'),
             ),
 
 
@@ -117,7 +149,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ),
 
 
-          title: const Text('hi world'),
+          title: const Text(
+            'Turbo Sim Express',
+            style: TextStyle(
+                fontStyle: FontStyle.normal,
+            ),
+          ),
+          // Image.asset('Images/TurbosimExpress_Logo(2).jpg',height: 100,width: 135,),
         actions: <Widget>[
           // This button presents popup menu items.
 
@@ -126,14 +164,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               onSelected: (Menu item) {
 
                 setState(() {
-                  _selectedMenu = item.name;
+                  // _selectedMenu = item.name;
                 });
               },
 
+              child: const Icon(CupertinoIcons.cart,size: 26),
               itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu>>[
+
                 const PopupMenuItem<Menu>(
                   value: Menu.itemOne,
-                  child: Text('Item 1'),
+                  textStyle: TextStyle(fontStyle: FontStyle.italic,
+                      color: Colors.black,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 20,
+                  ),
+                  child: Text('Item 1',textAlign: TextAlign.center,),
                 ),
                 const PopupMenuItem<Menu>(
                   value: Menu.itemTwo,
@@ -150,11 +195,20 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               ]),
         ],
       ),
-      body: Center(
-        child: Text('selectedMenu: $_selectedMenu'),
+      bottomNavigationBar: myBNB,
+      body: routes(
 
+        index: index,
       ),
     );
+
   }
 }
+
+// class _BNavigatorState State<BNavigatorState> {
+//   @override
+//   Widget build(BuildContext context){
+//     return Container();
+//   }
+// }
 

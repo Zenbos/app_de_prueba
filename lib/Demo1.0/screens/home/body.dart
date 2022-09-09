@@ -14,7 +14,7 @@ class cuerpo extends StatelessWidget {
 
 
 
-backgroundColor: Colors.cyan,
+backgroundColor: Colors.black,
         body: Center(
           child: Text('hi world'),
 
