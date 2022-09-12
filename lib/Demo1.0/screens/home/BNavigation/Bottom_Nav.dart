@@ -35,14 +35,14 @@ class _BNavigatorState extends State<BNavigator> {
         unselectedFontSize: 12.0,
         items: const [
           BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_bag_sharp,),
+              label: 'Shop'
 
-            icon: Icon(Icons.home,),
-           label: 'Home'
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.speaker_phone,),
-              label: 'ICCID'
 
+            icon: Icon(Icons.ondemand_video,),
+           label: 'Tutorials'
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.lock_open,),
@@ -50,8 +50,8 @@ class _BNavigatorState extends State<BNavigator> {
 
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag_sharp,),
-              label: 'Shop'
+              icon: Icon(Icons.speaker_phone,),
+              label: 'ICCID'
 
           ),
           BottomNavigationBarItem(
