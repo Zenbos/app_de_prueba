@@ -36,8 +36,9 @@ BNavigator ?myBNB;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const Navbar(),
+      drawer:  Navbar(),
       appBar: AppBar(
+        // automaticallyImplyLeading: false, @cada que pases a otro menu que no sea home aplicar esto
         backgroundColor: kPrimaryColor2,
         elevation: 3,
         // leading: PopupMenuButton(
@@ -89,10 +90,12 @@ BNavigator ?myBNB;
         // ),
 
 
-          title: const Text(
-            'Shop',
-            style: TextStyle(
-                fontStyle: FontStyle.normal,
+          title:  Center(
+            child: Text(
+              'Turbo Sim Express',
+              style: TextStyle(
+                  fontStyle: FontStyle.normal,
+              ),
             ),
           ),
           // Image.asset('Images/TurbosimExpress_Logo(2).jpg',height: 100,width: 135,),
@@ -136,6 +139,7 @@ BNavigator ?myBNB;
         ],
       ),
       bottomNavigationBar: myBNB,
+      backgroundColor: kBackgroundColor,
       body: routes(
 
         index: index,

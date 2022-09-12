@@ -1,14 +1,24 @@
 import 'package:app_de_prueba/Demo1.0/constantes.dart';
 import 'package:app_de_prueba/Demo1.0/screens/home/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 enum Menu { itemOne, itemTwo, itemThree, itemFour }
 
-void main() {
-  runApp(const MyApp());
+
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  // static final String title = 'IMSI';
+
   const MyApp({Key? key}) : super(key: key);
 
 

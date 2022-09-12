@@ -31,12 +31,14 @@ class _BNavigatorState extends State<BNavigator> {
         type: BottomNavigationBarType.fixed,
         selectedItemColor: const Color(0xFF9D0101),
         iconSize: 25.0,
+        selectedIconTheme: const IconThemeData(size: 35),
         selectedFontSize: 14.0,
         unselectedFontSize: 12.0,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_bag_sharp,),
-              label: 'Shop'
+
+              icon: Icon(Icons.home),
+              label: 'Home',
 
           ),
           BottomNavigationBarItem(
@@ -50,13 +52,13 @@ class _BNavigatorState extends State<BNavigator> {
 
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.speaker_phone,),
-              label: 'ICCID'
+              icon: Icon(Icons.phone_iphone, ),
+              label: 'IMSI/ICCID'
 
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.phone_iphone, ),
-              label: 'IMSI'
+              icon: Icon(Icons.shop,),
+              label: 'Shop'
 
           ),
         ]

@@ -1,3 +1,4 @@
+import 'package:app_de_prueba/Demo1.0/constantes.dart';
 import 'package:flutter/material.dart';
 
 class Navbar extends StatelessWidget {
@@ -24,7 +25,7 @@ class Navbar extends StatelessWidget {
                      ),
                    ),
                     decoration: const BoxDecoration(
-                      color: Colors.blue,
+                      color: kPrimaryColor2,
                       image: DecorationImage(
                           image: NetworkImage(
                               'https://th.bing.com/th/id/R.93b95738cb630f899bacf7dd835b5ad5?rik=%2b5zCEyYOztKvhw&riu=http%3a%2f%2fwscreenwallpapers.com%2fwp-content%2fuploads%2f2015%2f05%2f4k-Wallpapers-6.jpg&ehk=AugAS8it8ApqBh6w0dLdGuvdHVUeBr8dyGR3uzZriFM%3d&risl=&pid=ImgRaw&r=0'
