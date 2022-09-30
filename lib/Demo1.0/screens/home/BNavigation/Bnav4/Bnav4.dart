@@ -1,8 +1,14 @@
 import 'package:app_de_prueba/Demo1.0/main.dart';
+import 'package:app_de_prueba/Demo1.0/screens/home/BNavigation/Bnav4/page/ICCID.dart';
 import 'package:app_de_prueba/Demo1.0/screens/home/BNavigation/Bnav4/page/IMSI.dart';
 import 'package:app_de_prueba/Demo1.0/screens/home/BNavigation/Bnav4/widget/tabbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '../../../../constantes.dart';
+
+
+
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,15 +33,19 @@ class Bnav4 extends StatelessWidget {
   //     child: Text('IMSI/ICCID'),
   //   );
   // }
+
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     title: title,
-    theme: ThemeData(primarySwatch: Colors.red),
+      color: Colors.brown,
+    theme: ThemeData(appBarTheme: AppBarTheme(color: kPrimaryColor2)),
     home: MainPage(),
   );
 }
 
 class MainPage extends StatefulWidget {
+
+
   @override
   _MainPageState createState() => _MainPageState();
 }
@@ -44,15 +54,21 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) => TabBarWidget(
 
     title: Bnav4.title,
-    tabs: [
-      Tab(icon: Icon(Icons.select_all), text: 'IMSI'),
+    tabs:  [
+      Tab(icon: Icon(Icons.select_all), text: 'IMSI',),
       Tab(icon: Icon(Icons.file_open), text: 'ICCID'),
+      
 
     ],
+    icon: Icon(Icons.search),
     children: [
+
       SortablePage(),
-      Container(),
+      ICCIDPage(),
+
 
     ],
   );
 }
+
+

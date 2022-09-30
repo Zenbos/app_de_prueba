@@ -1,8 +1,8 @@
 class User {
   final String Country;
   final String Network;
-  final int IMSI1 ;
-  final int IMSI2 ;
+  final int IMSI1;
+  final int IMSI2;
 
   const User({
     required this.Country,

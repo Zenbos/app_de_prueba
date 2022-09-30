@@ -32,24 +32,7 @@ class _SortablePageState extends State<SortablePage> {
   Widget build(BuildContext context) {
   return Scaffold(
 backgroundColor: kBackgroundColor ,
-  appBar: AppBar(
-    flexibleSpace: Container(padding: EdgeInsets.zero,
-      margin: EdgeInsets.zero,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10) ),
-        gradient: LinearGradient(
-          colors: [Colors.transparent, Colors.transparent],
-          begin: Alignment.bottomRight,
-          end: Alignment.topLeft,
-        ),
-      ),
-      child: IconButton(
-          onPressed: (){
 
-          },
-          icon: Icon(Icons.search)),
-    ),
-  ),
   body:
       ScrollableWidget(child: buildDataTable()),
   );
@@ -57,13 +40,17 @@ backgroundColor: kBackgroundColor ,
 
   Widget buildDataTable() {
 
-    final columns = ['Country', 'Network', 'IMSI 1', 'IMSI 2'];
+    final columns = ['Country','Network', 'IMSI 1', 'IMSI 2'];
 
-    return DataTable(
+    return DataTable(horizontalMargin: 10,
+
       sortAscending: isAscending,
       sortColumnIndex: sortColumnIndex,
+        columnSpacing: 2,
       columns: getColumns(columns),
       rows: getRows(users),
+        headingTextStyle: const TextStyle( color: Colors.black87,fontWeight: FontWeight.w900 ,),
+      dataTextStyle: const TextStyle(color: Colors.black87),
     );
   }
 
@@ -77,7 +64,10 @@ backgroundColor: kBackgroundColor ,
   List<DataRow> getRows(List<User> users) => users.map((User user) {
         final cells = [user.Country, user.Network, user.IMSI1, user.IMSI2];
 
-        return DataRow(cells: getCells(cells));
+        return DataRow(
+
+            cells: getCells(cells)
+        );
       }).toList();
 
   List<DataCell> getCells(List<dynamic> cells) =>

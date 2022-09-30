@@ -41,26 +41,26 @@ class _BNavigatorState extends State<BNavigator> {
               label: 'Home',
 
           ),
-          BottomNavigationBarItem(
-
-            icon: Icon(Icons.ondemand_video,),
-           label: 'Tutorials'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.lock_open,),
-            label: 'Unlock'
-
-          ),
+          // BottomNavigationBarItem(
+          //
+          //   icon: Icon(Icons.ondemand_video,),
+          //  label: 'Tutorials'
+          // ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.lock_open,),
+          //   label: 'Unlock'
+          //
+          // ),
           BottomNavigationBarItem(
               icon: Icon(Icons.phone_iphone, ),
               label: 'IMSI/ICCID'
 
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.shop,),
-              label: 'Shop'
-
-          ),
+          // BottomNavigationBarItem(
+          //     icon: Icon(Icons.shop,),
+          //     label: 'Shop'
+          //
+          // ),
         ]
     );
   }

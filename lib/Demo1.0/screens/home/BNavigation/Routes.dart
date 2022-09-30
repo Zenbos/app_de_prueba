@@ -17,9 +17,9 @@ class routes extends StatelessWidget{
   Widget build(BuildContext context){
     List<Widget> myList = [
       const Bnav1(),
+      const Bnav4(),
       const Bnav2(),
       const Bnav3(),
-      const Bnav4(),
       const Bnav5(),
     ];
     return myList[index];
